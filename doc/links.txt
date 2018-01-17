@@ -4,6 +4,8 @@ Windows MIDI driver development
 Windows driver development
 - https://developer.microsoft.com/en-us/windows/hardware/windows-driver-kit
 
+Turning a Raspberry Pi Zero into a USB device ("gadget mode")
+- https://learn.adafruit.com/turning-your-raspberry-pi-zero-into-a-usb-gadget/overview
 
 MAC MIDI driver development
 - tbd
