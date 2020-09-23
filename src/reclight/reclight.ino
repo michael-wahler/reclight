@@ -1,4 +1,6 @@
 /*
+ * This program continuosly reads from the MIDI port and checks for the Mackie command for "record".
+ * Depending on "record" being on or off, it triggers an LED on the Arduino.
  * 
  * Required libraries
  * ------------------
@@ -24,6 +26,8 @@ void loop() {
   do {
     rx = MidiUSB.read();
     if (rx.header != 0) {
+      // check for Mackie command 95d/5Fh "record"
+      // for Mackie commands, see https://www.native-instruments.com/forum/threads/mackie-control-mcu-parameter-id-codes-template.266581/
       if (rx.byte1 == 0x90 && rx.byte2 == 0x5F) {
         digitalWrite(LED_BUILTIN, rx.byte3 == 0x7F ? HIGH : LOW);
       }
